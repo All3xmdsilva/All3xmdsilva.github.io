@@ -1,3 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AMTec-OS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <!-- MENU SUSPENSO -->
+    <div id="menu-susp" class="menu-susp">
+      <div class="dropdown">
+        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">☰ Menu</button>
+        <nav class="menu-content" id="menu-content" aria-label="Menu principal">
+          <a id="inicio-link" href="#">Início</a>
+          <a id="os-link" href="#">OS</a>
+          <a id="historico-link" href="#">Histórico</a>
+          <a id="insumos-link" href="#">Insumos</a>
+          <a id="patrimonios-link" href="#">Patrimônios</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- TÍTULO -->
+    <div id="header-container">
+      <div class="titulo">
+        <h1>AMTec-OS</h1>
+      </div>
+      <div class="obs">
+        <p>Ferramenta de agendamento e execução de Ordens de Serviço</p>
+      </div>
+    </div>
+  </header>
+
   <!-- INÍCIO / BOAS-VINDAS -->
   <section id="inicio-section" class="section">
     <div class="welcome-box">
@@ -12,3 +48,59 @@
       <button id="goto-os-btn" class="primary-btn">Ir para OS Pendentes</button>
     </div>
   </section>
+
+  <!-- LISTA DE OS PENDENTES -->
+  <section id="os-section" class="section hidden">
+    <h2>Ordens de Serviço Pendentes</h2>
+    <div id="os-list" role="list"></div>
+    <p id="no-os-msg" class="muted hidden">Nenhuma OS pendente no momento.</p>
+  </section>
+
+  <!-- TELA DE EXECUÇÃO DA OS -->
+  <section id="exec-section" class="section hidden">
+    <button id="back-btn" class="secondary-btn">← Voltar para Lista de OS</button>
+    <h2>Execução da Ordem de Serviço</h2>
+
+    <div id="os-info" class="os-info"></div>
+
+    <div class="form-section">
+      <h3>Execução do Serviço</h3>
+      <textarea id="exec-text" placeholder="Descreva o que foi feito..." rows="6"></textarea>
+      <button id="save-exec" class="primary-btn">Salvar Execução</button>
+    </div>
+
+    <div class="form-section">
+      <h3>Insumos Utilizados</h3>
+      <div class="insumo-row">
+        <input type="text" id="insumo-nome" placeholder="Nome do insumo">
+        <input type="number" id="insumo-qtde" placeholder="Quantidade" min="1">
+        <button id="add-insumo" class="small-btn">Adicionar</button>
+      </div>
+      <ul id="insumo-list" class="plain-list"></ul>
+    </div>
+  </section>
+
+  <!-- HISTÓRICO -->
+  <section id="historico-section" class="section hidden">
+    <h2>Histórico de OS Executadas</h2>
+    <div id="historico-list"></div>
+    <p id="no-historico-msg" class="muted hidden">Nenhuma OS executada no momento.</p>
+  </section>
+
+  <!-- INSUMOS -->
+  <section id="insumos-section" class="section hidden">
+    <h2>Lista de Insumos</h2>
+    <ul id="insumos-list" class="plain-list"></ul>
+    <p id="no-insumos-msg" class="muted hidden">Nenhum insumo cadastrado.</p>
+  </section>
+
+  <!-- PATRIMÔNIOS -->
+  <section id="patrimonios-section" class="section hidden">
+    <h2>Lista de Patrimônios</h2>
+    <ul id="patrimonios-list" class="plain-list"></ul>
+    <p id="no-patrimonios-msg" class="muted hidden">Nenhum patrimônio cadastrado.</p>
+  </section>
+
+  <script src="scr.js"></script>
+</body>
+</html>
